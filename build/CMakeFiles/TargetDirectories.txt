@@ -1,0 +1,3 @@
+/home/litie/visual studio/my_bot/build/CMakeFiles/TamaTasker.dir
+/home/litie/visual studio/my_bot/build/CMakeFiles/edit_cache.dir
+/home/litie/visual studio/my_bot/build/CMakeFiles/rebuild_cache.dir
