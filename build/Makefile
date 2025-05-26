@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TamaTasker
+# Target rules for targets named TaskTracker
 
 # Build rule for target.
-TamaTasker: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TamaTasker
-.PHONY : TamaTasker
+TaskTracker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TaskTracker
+.PHONY : TaskTracker
 
 # fast build rule for target.
-TamaTasker/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/build
-.PHONY : TamaTasker/fast
+TaskTracker/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/build
+.PHONY : TaskTracker/fast
 
 src/bot.o: src/bot.cpp.o
 .PHONY : src/bot.o
 
 # target to build an object file
 src/bot.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/bot.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/bot.cpp.o
 .PHONY : src/bot.cpp.o
 
 src/bot.i: src/bot.cpp.i
@@ -142,7 +142,7 @@ src/bot.i: src/bot.cpp.i
 
 # target to preprocess a source file
 src/bot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/bot.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/bot.cpp.i
 .PHONY : src/bot.cpp.i
 
 src/bot.s: src/bot.cpp.s
@@ -150,7 +150,7 @@ src/bot.s: src/bot.cpp.s
 
 # target to generate assembly for a file
 src/bot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/bot.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/bot.cpp.s
 .PHONY : src/bot.cpp.s
 
 src/buttonsResponse.o: src/buttonsResponse.cpp.o
@@ -158,7 +158,7 @@ src/buttonsResponse.o: src/buttonsResponse.cpp.o
 
 # target to build an object file
 src/buttonsResponse.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/buttonsResponse.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/buttonsResponse.cpp.o
 .PHONY : src/buttonsResponse.cpp.o
 
 src/buttonsResponse.i: src/buttonsResponse.cpp.i
@@ -166,7 +166,7 @@ src/buttonsResponse.i: src/buttonsResponse.cpp.i
 
 # target to preprocess a source file
 src/buttonsResponse.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/buttonsResponse.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/buttonsResponse.cpp.i
 .PHONY : src/buttonsResponse.cpp.i
 
 src/buttonsResponse.s: src/buttonsResponse.cpp.s
@@ -174,7 +174,7 @@ src/buttonsResponse.s: src/buttonsResponse.cpp.s
 
 # target to generate assembly for a file
 src/buttonsResponse.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/buttonsResponse.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/buttonsResponse.cpp.s
 .PHONY : src/buttonsResponse.cpp.s
 
 src/callbackFunc.o: src/callbackFunc.cpp.o
@@ -182,7 +182,7 @@ src/callbackFunc.o: src/callbackFunc.cpp.o
 
 # target to build an object file
 src/callbackFunc.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/callbackFunc.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/callbackFunc.cpp.o
 .PHONY : src/callbackFunc.cpp.o
 
 src/callbackFunc.i: src/callbackFunc.cpp.i
@@ -190,7 +190,7 @@ src/callbackFunc.i: src/callbackFunc.cpp.i
 
 # target to preprocess a source file
 src/callbackFunc.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/callbackFunc.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/callbackFunc.cpp.i
 .PHONY : src/callbackFunc.cpp.i
 
 src/callbackFunc.s: src/callbackFunc.cpp.s
@@ -198,7 +198,7 @@ src/callbackFunc.s: src/callbackFunc.cpp.s
 
 # target to generate assembly for a file
 src/callbackFunc.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/callbackFunc.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/callbackFunc.cpp.s
 .PHONY : src/callbackFunc.cpp.s
 
 src/database.o: src/database.cpp.o
@@ -206,7 +206,7 @@ src/database.o: src/database.cpp.o
 
 # target to build an object file
 src/database.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/database.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/database.cpp.o
 .PHONY : src/database.cpp.o
 
 src/database.i: src/database.cpp.i
@@ -214,7 +214,7 @@ src/database.i: src/database.cpp.i
 
 # target to preprocess a source file
 src/database.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/database.cpp.i
 .PHONY : src/database.cpp.i
 
 src/database.s: src/database.cpp.s
@@ -222,15 +222,39 @@ src/database.s: src/database.cpp.s
 
 # target to generate assembly for a file
 src/database.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/database.cpp.s
 .PHONY : src/database.cpp.s
+
+src/helpFunctions.o: src/helpFunctions.cpp.o
+.PHONY : src/helpFunctions.o
+
+# target to build an object file
+src/helpFunctions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/helpFunctions.cpp.o
+.PHONY : src/helpFunctions.cpp.o
+
+src/helpFunctions.i: src/helpFunctions.cpp.i
+.PHONY : src/helpFunctions.i
+
+# target to preprocess a source file
+src/helpFunctions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/helpFunctions.cpp.i
+.PHONY : src/helpFunctions.cpp.i
+
+src/helpFunctions.s: src/helpFunctions.cpp.s
+.PHONY : src/helpFunctions.s
+
+# target to generate assembly for a file
+src/helpFunctions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/helpFunctions.cpp.s
+.PHONY : src/helpFunctions.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -238,7 +262,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -246,7 +270,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/menu.o: src/menu.cpp.o
@@ -254,7 +278,7 @@ src/menu.o: src/menu.cpp.o
 
 # target to build an object file
 src/menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/menu.cpp.o
 .PHONY : src/menu.cpp.o
 
 src/menu.i: src/menu.cpp.i
@@ -262,7 +286,7 @@ src/menu.i: src/menu.cpp.i
 
 # target to preprocess a source file
 src/menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/menu.cpp.i
 .PHONY : src/menu.cpp.i
 
 src/menu.s: src/menu.cpp.s
@@ -270,7 +294,7 @@ src/menu.s: src/menu.cpp.s
 
 # target to generate assembly for a file
 src/menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/src/menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/src/menu.cpp.s
 .PHONY : src/menu.cpp.s
 
 # Help Target
@@ -281,7 +305,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... TamaTasker"
+	@echo "... TaskTracker"
 	@echo "... src/bot.o"
 	@echo "... src/bot.i"
 	@echo "... src/bot.s"
@@ -294,6 +318,9 @@ help:
 	@echo "... src/database.o"
 	@echo "... src/database.i"
 	@echo "... src/database.s"
+	@echo "... src/helpFunctions.o"
+	@echo "... src/helpFunctions.i"
+	@echo "... src/helpFunctions.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = "/home/litie/visual studio/my_bot/build"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/TamaTasker.dir/all
+all: CMakeFiles/TaskTracker.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/TamaTasker.dir/clean
+clean: CMakeFiles/TaskTracker.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/TamaTasker.dir
+# Target rules for target CMakeFiles/TaskTracker.dir
 
 # All Build rule for target.
-CMakeFiles/TamaTasker.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/litie/visual studio/my_bot/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target TamaTasker"
-.PHONY : CMakeFiles/TamaTasker.dir/all
+CMakeFiles/TaskTracker.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/home/litie/visual studio/my_bot/build/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Built target TaskTracker"
+.PHONY : CMakeFiles/TaskTracker.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/TamaTasker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/litie/visual studio/my_bot/build/CMakeFiles" 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TamaTasker.dir/all
+CMakeFiles/TaskTracker.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/litie/visual studio/my_bot/build/CMakeFiles" 8
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TaskTracker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/litie/visual studio/my_bot/build/CMakeFiles" 0
-.PHONY : CMakeFiles/TamaTasker.dir/rule
+.PHONY : CMakeFiles/TaskTracker.dir/rule
 
 # Convenience name for target.
-TamaTasker: CMakeFiles/TamaTasker.dir/rule
-.PHONY : TamaTasker
+TaskTracker: CMakeFiles/TaskTracker.dir/rule
+.PHONY : TaskTracker
 
 # clean rule for target.
-CMakeFiles/TamaTasker.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TamaTasker.dir/build.make CMakeFiles/TamaTasker.dir/clean
-.PHONY : CMakeFiles/TamaTasker.dir/clean
+CMakeFiles/TaskTracker.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TaskTracker.dir/build.make CMakeFiles/TaskTracker.dir/clean
+.PHONY : CMakeFiles/TaskTracker.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

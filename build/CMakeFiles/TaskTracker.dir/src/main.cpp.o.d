@@ -1,7 +1,6 @@
-CMakeFiles/TamaTasker.dir/src/buttonsResponse.cpp.o: \
- /home/litie/visual\ studio/my_bot/src/buttonsResponse.cpp \
- /usr/include/stdc-predef.h \
- /home/litie/visual\ studio/my_bot/src/buttonsResponse.h \
+CMakeFiles/TaskTracker.dir/src/main.cpp.o: \
+ /home/litie/visual\ studio/my_bot/src/main.cpp \
+ /usr/include/stdc-predef.h /home/litie/visual\ studio/my_bot/src/bot.h \
  /usr/local/include/tgbot/tgbot.h /usr/local/include/tgbot/Api.h \
  /usr/local/include/tgbot/TgException.h /usr/local/include/tgbot/export.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
@@ -2069,5 +2068,8 @@ CMakeFiles/TamaTasker.dir/src/buttonsResponse.cpp.o: \
  /usr/local/include/tgbot/net/TgWebhookServer.h \
  /usr/local/include/tgbot/net/TgWebhookTcpServer.h \
  /usr/local/include/tgbot/tools/FileTools.h \
+ /home/litie/visual\ studio/my_bot/src/helpFunctions.h \
  /home/litie/visual\ studio/my_bot/src/menu.h \
- /home/litie/visual\ studio/my_bot/src/database.h /usr/include/sqlite3.h
+ /home/litie/visual\ studio/my_bot/src/database.h /usr/include/sqlite3.h \
+ /home/litie/visual\ studio/my_bot/src/buttonsResponse.h \
+ /home/litie/visual\ studio/my_bot/src/callbackFunc.h

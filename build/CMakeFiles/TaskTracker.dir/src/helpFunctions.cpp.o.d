@@ -1,6 +1,7 @@
-CMakeFiles/TamaTasker.dir/src/menu.cpp.o: \
- /home/litie/visual\ studio/my_bot/src/menu.cpp \
- /usr/include/stdc-predef.h /home/litie/visual\ studio/my_bot/src/menu.h \
+CMakeFiles/TaskTracker.dir/src/helpFunctions.cpp.o: \
+ /home/litie/visual\ studio/my_bot/src/helpFunctions.cpp \
+ /usr/include/stdc-predef.h \
+ /home/litie/visual\ studio/my_bot/src/helpFunctions.h \
  /usr/local/include/tgbot/tgbot.h /usr/local/include/tgbot/Api.h \
  /usr/local/include/tgbot/TgException.h /usr/local/include/tgbot/export.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
@@ -2067,4 +2068,6 @@ CMakeFiles/TamaTasker.dir/src/menu.cpp.o: \
  /usr/local/include/tgbot/net/TgWebhookLocalServer.h \
  /usr/local/include/tgbot/net/TgWebhookServer.h \
  /usr/local/include/tgbot/net/TgWebhookTcpServer.h \
- /usr/local/include/tgbot/tools/FileTools.h
+ /usr/local/include/tgbot/tools/FileTools.h \
+ /home/litie/visual\ studio/my_bot/src/menu.h \
+ /home/litie/visual\ studio/my_bot/src/database.h /usr/include/sqlite3.h

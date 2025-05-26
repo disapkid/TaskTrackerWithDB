@@ -2,7 +2,7 @@
 #include "database.h"
 
 int main() {
-    TgBot::Bot bot("///");
+    TgBot::Bot bot("7493627446:AAFg8a8XOTZ0FLwzVhCmSiLjjf0TZl6j9C0");
 
     std::string TGBotDB = "data.db";
     Database botDB(TGBotDB);
@@ -18,5 +18,6 @@ int main() {
     } catch (const std::exception& e) {
         std::cerr << "Ошибка: " << e.what() << std::endl;
     }
+    
     return 0;
 }

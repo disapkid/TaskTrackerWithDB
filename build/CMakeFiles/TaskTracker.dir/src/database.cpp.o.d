@@ -1,4 +1,4 @@
-CMakeFiles/TamaTasker.dir/src/database.cpp.o: \
+CMakeFiles/TaskTracker.dir/src/database.cpp.o: \
  /home/litie/visual\ studio/my_bot/src/database.cpp \
  /usr/include/stdc-predef.h \
  /home/litie/visual\ studio/my_bot/src/database.h \

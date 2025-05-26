@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
-project(TamaTasker)
+project(TaskTracker)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -31,9 +31,9 @@ message(STATUS "SQLite3 libraries: ${SQLite3_LIBRARIES}")
 file(GLOB SOURCES "src/*.cpp")
 set(TGBOT_LIB /usr/local/lib/libTgBot.a)
 
-add_executable(TamaTasker ${SOURCES})
+add_executable(TaskTracker ${SOURCES})
 
-target_link_libraries(TamaTasker
+target_link_libraries(TaskTracker
     ${TGBOT_LIB}
     ${Boost_LIBRARIES}
     ${OPENSSL_LIBRARIES}

@@ -5,8 +5,9 @@
 
 struct Task {
     int id;
-    int TaskTime;
-    bool awaitingStatus;
+    int taskTime;
+    bool waitingTask;
+    bool waitingDeadline;
     std::string task;
     std::string deadline;
 };
@@ -15,16 +16,24 @@ class Database {
     private: 
         sqlite3* db;
     public:
-        Database(std::string& dbName);
+        Database(const std::string& dbName);
         ~Database();
 
         void CreateTable();
 
-        bool AddTask(int userID, std::string& task, int TaskTime, std::string& deadline);
+        bool AddTask(int userID, const std::string& task, int TaskTime, const std::string& deadline);
 
-        bool UpdateTask(int userID, int taskID, std::string newTask, std::string newDeadline);
+        bool setUTC(int userID, int UTC);
+
+        int getUTC(int userID);
+
+        bool UpdateTask(int userID, int taskID, const std::string& newTask);
+        
+        bool UpdateDeadline(int userID, int taskID, const std::string& newDeadline);
 
         std::vector<Task> ShowActiveTasks(int userID);
+
+        Task ShowTasksText(int userID, int taskID);
 
         bool DeleteTask(int taskID, int chatID);
 };

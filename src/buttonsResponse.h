@@ -2,13 +2,14 @@
 #include <tgbot/tgbot.h>
 #include "menu.h"
 #include "database.h"
+#include <algorithm>
 
-void SendPic(TgBot::Bot& bot, TgBot::CallbackQuery::Ptr& query);
+void SetUsersUTC(TgBot::Bot& bot, TgBot::CallbackQuery::Ptr& query, Database& botDB);
 
-void DoSomething(TgBot::Bot& bot, TgBot::CallbackQuery::Ptr& query);
+void TaskNumber(TgBot::Bot& bot, TgBot::CallbackQuery::Ptr& query, int ID, Database& botDB);
 
 void ActiveTasks(TgBot::Bot& bot, TgBot::CallbackQuery::Ptr& query, Database& botDB);
 
-void PetStatus(TgBot::Bot& bot);
+void DeleteCurrentTask(TgBot::Bot& bot,TgBot::CallbackQuery::Ptr& query, int ID, Database& botDB);
 
 void NewTask(TgBot::Bot& bot, TgBot::CallbackQuery::Ptr& query, Database& botDB);

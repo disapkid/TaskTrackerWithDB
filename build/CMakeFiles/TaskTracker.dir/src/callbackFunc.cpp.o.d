@@ -1,4 +1,4 @@
-CMakeFiles/TamaTasker.dir/src/callbackFunc.cpp.o: \
+CMakeFiles/TaskTracker.dir/src/callbackFunc.cpp.o: \
  /home/litie/visual\ studio/my_bot/src/callbackFunc.cpp \
  /usr/include/stdc-predef.h \
  /home/litie/visual\ studio/my_bot/src/callbackFunc.h \

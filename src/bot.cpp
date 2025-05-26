@@ -14,22 +14,9 @@ void help(TgBot::Bot& bot) {
     });
 }
 
-void readTask(TgBot::Bot& bot, Database& botDB) {
-    bot.getEvents().onNonCommandMessage([&bot, &botDB](TgBot::Message::Ptr message) {
-        auto ChatID = message->chat->id;
-        std::string currMessage = message->text;
-        int taskSendTime = message->date;
-
-        std::vector<Task> currTasks = botDB.ShowActiveTasks(message->chat->id);
-        if(currTasks.back().awaitingStatus == true) {
-            botDB.UpdateTask(ChatID, currTasks.back().id, currMessage, "18:30" );
-        } else return;
-    });
-}
-
 void assembled(TgBot::Bot& bot, Database& botDB) {
     start(bot);
     help(bot);
     CallBackFunc(bot, botDB);
-    readTask(bot, botDB);
+    readMessage(bot, botDB);
 }
