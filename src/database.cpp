@@ -24,10 +24,19 @@ void Database::CreateTable() {
             "waitingTask BOOLEAN,"
             "waitingDeadline BOOLEAN,"
             "isReminded BOOLEAN,"
-            "usersUTC INTEGER,"
             "deadline TEXT);";
     char* errMsg = nullptr;
     if(sqlite3_exec(db,table,nullptr,nullptr,&errMsg) != SQLITE_OK) {
+        std::cerr<<" SQL Error: "<< errMsg << std::endl;
+        sqlite3_free(errMsg);
+    };
+
+    const char* utc = "CREATE TABLE IF NOT EXISTS utc("
+                      "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                      "chatID INTEGER,"
+                      "userUTC INTEGER);";
+    char* secondErrMsg = nullptr;
+    if(sqlite3_exec(db,utc,nullptr,nullptr,&secondErrMsg) != SQLITE_OK) {
         std::cerr<<" SQL Error: "<< errMsg << std::endl;
         sqlite3_free(errMsg);
     };
@@ -35,7 +44,7 @@ void Database::CreateTable() {
 
 bool Database::AddTask(int chatID, const std::string& task, int taskTime, const  std::string& deadline) {
     const char* sqlRequest = "INSERT INTO tasks (chatID, task, taskTime, waitingTask, waitingDeadline," 
-                             "isReminded, usersUTC, deadline) VALUES (?, ?, ?, 1, 1, 0, 404, ?);";
+                             "isReminded, deadline) VALUES (?, ?, ?, 1, 1, 0, ?);";
     sqlite3_stmt* statement = nullptr;
     if(sqlite3_prepare_v2(db, sqlRequest, -1, &statement, nullptr) != SQLITE_OK) return false;
 
@@ -49,8 +58,25 @@ bool Database::AddTask(int chatID, const std::string& task, int taskTime, const 
     return success;
 }
 
+bool Database::addUTC(int userID) {
+    const char* SQLRequest = "INSERT INTO utc (chatID, userUTC) VALUES (?,999);";
+
+    sqlite3_stmt* statement = nullptr;
+    if(sqlite3_prepare_v2(db,SQLRequest, -1, &statement, nullptr) != SQLITE_OK) return false;
+
+    sqlite3_bind_int(statement,1,userID);
+
+    bool success = (sqlite3_step(statement) == SQLITE_DONE);
+    sqlite3_finalize(statement);
+    return success;
+}
+
 bool Database::setUTC(int userID, int UTC) {
-    const char* SQLRequest = "UPDATE tasks SET usersUTC = ? WHERE chatID = ?;";
+
+    // 888 : waiting for UTC
+    // 999 : default 
+
+    const char* SQLRequest = "UPDATE utc SET userUTC = ? WHERE chatID = ?;";
     sqlite3_stmt* statement = nullptr;
     if(sqlite3_prepare_v2(db, SQLRequest, -1, &statement, nullptr) != SQLITE_OK) return false;
 
@@ -63,11 +89,11 @@ bool Database::setUTC(int userID, int UTC) {
 }
 
 int Database::getUTC(int userID) {
-    const char* SQLRequest = "SELECT usersUTC FROM tasks WHERE chatID = ?;";
+    const char* SQLRequest = "SELECT userUTC FROM utc WHERE chatID = ?;";
     sqlite3_stmt* statement = nullptr;
 
     int result = 0;
-    if(sqlite3_prepare_v2(db, SQLRequest, -1, &statement, nullptr) != SQLITE_OK) return -404;
+    if(sqlite3_prepare_v2(db, SQLRequest, -1, &statement, nullptr) != SQLITE_OK) return 999;
 
     sqlite3_bind_int(statement, 1, userID);
 
@@ -158,6 +184,50 @@ Task Database::ShowTasksText(int userID, int taskID) {
 
     sqlite3_finalize(statement);
     return result;
+}
+
+std::pair<std::string, std::pair<std::string, int>> Database::ClosestTask(int userID)
+{
+    // <task text, <deadline, task id>>
+    const char* SQLRequest = "SELECT task, deadline, id FROM tasks "
+                             "WHERE chatID = ? AND isReminded = 0 "
+                             "ORDER BY deadline ASC "
+                             "LIMIT 1";
+    sqlite3_stmt* statement = nullptr;
+
+    std::pair<std::string, std::pair<std::string, int>> result = {"", {"", 0}};
+
+    if (sqlite3_prepare_v2(db, SQLRequest, -1, &statement, nullptr) != SQLITE_OK)
+        return result;
+
+    sqlite3_bind_int(statement, 1, userID);
+
+    if (sqlite3_step(statement) == SQLITE_ROW) {
+        const unsigned char* task_text = sqlite3_column_text(statement, 0);
+        const unsigned char* deadline_text = sqlite3_column_text(statement, 1);
+        result.first = task_text ? reinterpret_cast<const char*>(task_text) : "";
+        result.second.first = deadline_text ? reinterpret_cast<const char*>(deadline_text) : "";
+        result.second.second = sqlite3_column_int(statement, 2);
+    }
+
+    sqlite3_finalize(statement);
+
+    return result;
+}
+
+bool Database::UpdateTaskStatus(int userID, int taskID) {
+    const char* SQLRequest = "UPDATE tasks SET isReminded = 1 WHERE chatID = ? AND ID = ?";
+    sqlite3_stmt* statement = nullptr;
+
+    if(sqlite3_prepare_v2(db, SQLRequest, -1, &statement, nullptr) != SQLITE_OK) return false;
+
+    sqlite3_bind_int(statement, 1, userID);
+    sqlite3_bind_int(statement, 2, taskID);
+
+    bool success = (sqlite3_step(statement) == SQLITE_DONE);
+    sqlite3_finalize(statement);
+
+    return success;
 }
 
 bool Database::DeleteTask(int taskID, int chatID) {

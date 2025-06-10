@@ -21,5 +21,5 @@ void Menu(TgBot::Bot& bot, TgBot::Message::Ptr& message) {
         buttons.push_back(activeTasks);
         keyboard->inlineKeyboard.push_back(buttons);
 
-        bot.getApi().sendMessage(message->chat->id, "Available functions: ", nullptr, 0, keyboard);
+        bot.getApi().sendMessage(message->chat->id, "Доступные функции: ", nullptr, 0, keyboard);
 }

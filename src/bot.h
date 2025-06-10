@@ -6,7 +6,7 @@
 #include "callbackFunc.h"
 #include "database.h"
 
-void start(TgBot::Bot& bot);
+void start(TgBot::Bot& bot, Database& botDB);
 
 void help(TgBot::Bot& bot);
 

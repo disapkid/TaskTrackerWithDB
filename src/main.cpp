@@ -7,7 +7,7 @@ int main() {
     std::string TGBotDB = "data.db";
     Database botDB(TGBotDB);
     botDB.CreateTable();
-    
+
 	assembled(bot, botDB);
     try {
         bot.getApi().deleteWebhook(); 
