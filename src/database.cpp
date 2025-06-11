@@ -215,6 +215,22 @@ std::pair<std::string, std::pair<std::string, int>> Database::ClosestTask(int us
     return result;
 }
 
+std::vector<int64_t> Database::UsersID() {
+    const char* SQLRequest = "SELECT DISTINCT chatID FROM tasks";
+    sqlite3_stmt* statement = nullptr;
+
+    std::vector<int64_t> result;
+
+    if(sqlite3_prepare_v2(db, SQLRequest, -1, &statement, nullptr) != SQLITE_OK) { return result; }
+
+    while(sqlite3_step(statement) == SQLITE_ROW) {
+        result.emplace_back(sqlite3_column_int64(statement,0));
+    }
+    sqlite3_finalize(statement);
+
+    return result;
+}
+
 bool Database::UpdateTaskStatus(int userID, int taskID) {
     const char* SQLRequest = "UPDATE tasks SET isReminded = 1 WHERE chatID = ? AND ID = ?";
     sqlite3_stmt* statement = nullptr;

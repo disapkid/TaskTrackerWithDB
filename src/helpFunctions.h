@@ -9,4 +9,4 @@ bool checkTime(const std::string& deadline, TgBot::Message::Ptr& message, TgBot:
 
 bool checkUTC(const std::string& UTC);
 
-void checkDeadline(TgBot::Message::Ptr& message, Database& botDB);
+void checkDeadline(int chatID, TgBot::Bot& bot, Database& botDB);

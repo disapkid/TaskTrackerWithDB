@@ -91,8 +91,12 @@ bool checkUTC(const std::string& UTC) {
     }
 }
 
-void checkDeadline(TgBot::Message::Ptr& message, TgBot::Bot& bot, Database& botDB) {
-    auto taskInfo = botDB.ClosestTask(message->chat->id);
+void checkDeadline(int chatID, TgBot::Bot& bot, Database& botDB) {
+    auto taskInfo = botDB.ClosestTask(chatID);
+    std::pair<std::string, std::pair<std::string, int>> empty = {"", {"", 0}};
+
+    if(taskInfo == empty) return;
+
     std::string taskText = std::string("До задачи осталось 10 минут! \n") + "Задача: " + taskInfo.first;
     std::string deadlineStr = taskInfo.second.first;
     
@@ -102,23 +106,20 @@ void checkDeadline(TgBot::Message::Ptr& message, TgBot::Bot& bot, Database& botD
     
     auto now = std::chrono::system_clock::now();
     time_t now_tt = std::chrono::system_clock::to_time_t(now);
-    std::tm* now_tm = std::localtime(&now_tt);
-
-    std::tm deadline_tm = *now_tm;
-    deadline_tm.tm_hour = tm.tm_hour;
-    deadline_tm.tm_min = tm.tm_min;
-    deadline_tm.tm_sec = 0;
     
-    time_t deadline_tt = std::mktime(&deadline_tm);
-
-    int user_utc = botDB.getUTC(message->chat->id);
-    time_t deadline_utc = deadline_tt - user_utc * 3600;
-
+    int user_utc = botDB.getUTC(chatID);
+    tm.tm_hour -= user_utc;  
+    
+    time_t deadline_tt = std::mktime(&tm);
     double diff_seconds = difftime(deadline_tt, now_tt);
 
-    if(diff_seconds <= 600) {
-        bot.getApi().sendMessage(message->chat->id, taskText);
-        botDB.UpdateTaskStatus(message->chat->id, taskInfo.second.second);
+    if(diff_seconds <= 600 and diff_seconds > 0) {
+        bot.getApi().sendMessage(chatID, taskText);
+        botDB.UpdateTaskStatus(chatID, taskInfo.second.second);
     }
 
+    if(diff_seconds <= 0) {
+        bot.getApi().sendMessage(chatID, "Следующая задача будет автоматически удалена по причине истечения дедлайна: \n" + taskInfo.first);
+        botDB.DeleteTask(taskInfo.second.second, chatID);
+    }
 }

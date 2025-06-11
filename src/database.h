@@ -39,6 +39,8 @@ class Database {
 
         std::pair<std::string, std::pair<std::string, int>> ClosestTask(int userID);
 
+        std::vector<int64_t> UsersID();
+
         bool UpdateTaskStatus(int userID, int taskID);
 
         bool DeleteTask(int taskID, int chatID);
