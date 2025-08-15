@@ -1,4 +1,42 @@
-Simple task tracker with own data base 
-Written on C++ with SQLite and TgBot framework
+# TaskTrackerWithDB
 
-The functions are organized across multiple files
+Телеграм-бот-таск-трекер на C++ с локальной базой данных SQLite. Бот позволяет создавать, просматривать и управлять задачами прямо из Telegram-чата. Проект собирается через CMake и использует фреймворк [`TgBot`](https://github.com/reo7sp/tgbot-cpp) и SQLite.
+
+> Pet-проект для практики C++/CMake, работы с Telegram Bot API и встраиваемой БД.
+
+## Особенности
+- ✉️ Управление задачами из Telegram (команды/кнопки).
+- 🗃️ Хранение данных локально в SQLite (один файл БД).
+- 🔧 Кроссплатформенная сборка через CMake.
+- 🧩 Минимальные внешние зависимости: TgBot, SQLite.
+
+## Содержание
+- [Сборка и запуск](#сборка-и-запуск)
+- [Структура проекта](#структура-проекта)
+
+
+## Сборка и запуск
+
+```bash
+mkdir -p build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release
+
+# запуск
+./tasktracker      # Linux/macOS
+.\Release\tasktracker.exe  # Windows
+```
+
+Если бинарник называется иначе — уточните фактическое имя/таргет в `CMakeLists.txt` и поправьте команды.
+
+
+## Структура проекта
+
+```
+.
+├─ src/                # исходники бота (обработчики команд, слой БД и т.п.)
+├─ build/              # артефакты сборки
+├─ CMakeLists.txt      # конфигурация CMake
+├─ README.md
+└─ .vscode/            # настройки редактора (опц.)
+```
